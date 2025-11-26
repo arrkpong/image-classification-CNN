@@ -81,17 +81,17 @@ class DataLoader:
 
     @staticmethod
     @st.cache_data(show_spinner="📦 Loading CIFAR-10 dataset...")
-    def load_cifar10() -> tuple[NDArray[np.float64], NDArray[np.int64],
-                                 NDArray[np.float64], NDArray[np.int64]]:
+    def load_cifar10() -> tuple[NDArray[np.float32], NDArray[np.uint8],
+                                 NDArray[np.float32], NDArray[np.uint8]]:
         """Load and normalize the CIFAR-10 dataset.
 
         Returns:
             A tuple containing (x_train, y_train, x_test, y_test) arrays.
-            Images are normalized to [0, 1] range.
+            Images are normalized to [0, 1] range as float32.
         """
         (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
-        x_train = x_train.astype(np.float64) / 255.0
-        x_test = x_test.astype(np.float64) / 255.0
+        x_train = x_train.astype(np.float32) / 255.0
+        x_test = x_test.astype(np.float32) / 255.0
         return x_train, y_train, x_test, y_test
 
 
@@ -199,7 +199,7 @@ class TensorBoardManager:
 
     def __init__(self) -> None:
         """Initialize TensorBoardManager with no active process."""
-        self.process: subprocess.Popen[bytes] | None = None
+        self.process: subprocess.Popen[str] | None = None
         self.port: int | None = None
 
     def _get_free_port(self) -> int:
