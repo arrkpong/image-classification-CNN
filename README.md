@@ -41,6 +41,32 @@ Follow these steps to set up the application on your local machine:
    ```bash
    pip install -r requirements.txt
    ```
+
+### Alternative: Install with uv
+
+This repository supports [uv](https://docs.astral.sh/uv/), a fast Python package manager. To get started with uv:
+
+1. Install uv (see [uv installation docs](https://docs.astral.sh/uv/getting-started/installation/)):
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+2. Create a virtual environment and sync dependencies:
+   ```bash
+   uv venv
+   uv sync
+   ```
+
+3. Add new dependencies (optional):
+   ```bash
+   uv add <package-name>
+   ```
+
+4. Run the application with uv:
+   ```bash
+   uv run streamlit run main.py
+   ```
+
 Running the Application
 To start the application, run the following command:
    ```bash
