@@ -40,7 +40,7 @@ CIFAR10_CLASSES: tuple[str, ...] = (
     "airplane", "automobile", "bird", "cat", "deer",
     "dog", "frog", "horse", "ship", "truck"
 )
-SUPPORTED_IMAGE_TYPES: list[str] = ["jpg", "jpeg", "png"]
+SUPPORTED_IMAGE_TYPES: list[str] = ["jpg", "jpeg", "png", "webp"]
 
 
 # =============================================================================
@@ -497,7 +497,7 @@ class ImageClassifierApp:
             "📤 Upload images:",
             type=SUPPORTED_IMAGE_TYPES,
             accept_multiple_files=True,
-            help="Supported formats: JPG, JPEG, PNG"
+            help="Supported formats: JPG, JPEG, PNG, WEBP"
         )
 
         if uploaded_files:

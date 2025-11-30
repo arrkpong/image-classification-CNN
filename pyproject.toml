@@ -1,30 +1,13 @@
 [project]
-name = "image-classification-cnn"
+name = "image-classification-ml-cnn"
 version = "0.1.0"
 description = "Image classification CNN demo and Streamlit app"
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [ { name = "arrkpong" } ]
-license = { text = "MIT OR Apache-2.0" }
-keywords = ["cnn", "image-classification", "tensorflow", "streamlit"]
-classifiers = ["Programming Language :: Python :: 3"]
-
-# Minimal set of runtime dependencies (keeps repository lightweight but usable).
-# The full requirements.txt remains in the repo for reproducibility.
 dependencies = [
-  "tensorflow==2.18.0",
-  "streamlit==1.40.1",
-  "pillow==11.0.0",
-  "numpy==2.0.2",
-  "pandas==2.2.3"
+    "tensorflow>=2.18.0",
+    "streamlit>=1.40.0",
+    "pillow>=11.0.0",
+    "numpy>=2.1.0",
+    "pandas>=2.2.0",
 ]
-
-[tool.uv]
-# uv-specific defaults that help manage virtualenv location and Python version.
-# These keys are informational; uv will respect environment and CLI flags.
-venv = ".venv"
-python = "3.12"
-
-[build-system]
-requires = ["setuptools>=61.0","wheel"]
-build-backend = "setuptools.build_meta"

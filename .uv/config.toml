@@ -1,8 +1,0 @@
-[project]
-name = "image-classification-cnn"
-python = "3.12"
-venv = ".venv"
-
-[venv]
-# When using `uv venv` the recommended directory is .venv. This documents that.
-path = ".venv"
